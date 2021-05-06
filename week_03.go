@@ -28,7 +28,7 @@ func main() {
 		select { // 监控阻塞等待
 			case <-ctx.Done():
 				 fmt.Println("收到context", ctx.Err())
-			case <- closeChan:
+			case <-closeChan:
 				 fmt.Println("手动关闭")
 		}
 		return srv.Shutdown(ctx)
